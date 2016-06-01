@@ -1,0 +1,6 @@
+Illegal Triangle
+Equilateral
+Illegal Triangle
+Illegal Input
+Scalene
+Isosceles
