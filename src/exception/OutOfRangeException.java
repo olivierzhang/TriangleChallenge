@@ -1,16 +1,16 @@
 package exception;
 
-public class IllegalConditionException extends RuntimeException {
+public class OutOfRangeException extends RuntimeException {
 
     private ErrorCode errorCode = null;
     private String detail = null;
 
-    public IllegalConditionException(ErrorCode errorCode) {
+    public OutOfRangeException(ErrorCode errorCode) {
         super(errorCode.getDescription());
         this.errorCode = errorCode;
     }
 
-    public IllegalConditionException(ErrorCode errorCode, String detail) {
+    public OutOfRangeException(ErrorCode errorCode, String detail) {
         super(errorCode.getDescription() + " : " + detail);
         this.errorCode = errorCode;
         this.detail = detail;

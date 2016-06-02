@@ -1,7 +1,7 @@
 import dto.EquilateralTriangle;
 import dto.IsoscelesTriangle;
 import dto.ScaleneTriangle;
-import exception.IllegalConditionException;
+import exception.OutOfRangeException;
 import org.junit.Before;
 import org.junit.Test;
 import service.ScaleneTriangleJudger;
@@ -47,7 +47,7 @@ public class ScaleneTriangleJudgerTest {
         assertNull(scaleneTriangleJudger.judgeTriangleBySides(side, side, side));
     }
 
-    @Test(expected = IllegalConditionException.class)
+    @Test(expected = OutOfRangeException.class)
     public void illegal_condition_exception_should_be_thrown_when_the_given_three_sides_can_not_combine_a_triangle() {
         BigDecimal side1 = new BigDecimal(new Random().nextDouble() * 100 + 1);
         BigDecimal side2 = side1.multiply(new BigDecimal(2));

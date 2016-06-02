@@ -1,16 +1,16 @@
 package exception;
 
-public class IllegalConditionException extends RuntimeException {
+public class IllegalFormatException extends RuntimeException {
 
     private ErrorCode errorCode = null;
     private String detail = null;
 
-    public IllegalConditionException(ErrorCode errorCode) {
+    public IllegalFormatException(ErrorCode errorCode) {
         super(errorCode.getDescription());
         this.errorCode = errorCode;
     }
 
-    public IllegalConditionException(ErrorCode errorCode, String detail) {
+    public IllegalFormatException(ErrorCode errorCode, String detail) {
         super(errorCode.getDescription() + " : " + detail);
         this.errorCode = errorCode;
         this.detail = detail;
