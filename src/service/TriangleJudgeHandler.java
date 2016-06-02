@@ -20,13 +20,13 @@ public class TriangleJudgeHandler {
     }
 
     public Triangle judgeTriangle(BigDecimal side1, BigDecimal side2, BigDecimal side3) {
-        Triangle triangle = null;
+        Triangle triangle;
         for (TriangleJudger judger : triangleJudgerList) {
             triangle = judger.judgeTriangleBySides(side1, side2, side3);
             if (triangle != null) {
                 return triangle;
             }
         }
-        return triangle;
+        return null;
     }
 }

@@ -1,5 +1,6 @@
 import dto.Triangle;
 import exception.ErrorCode;
+import exception.IllegalConditionException;
 import exception.IllegalFormatException;
 import exception.OutOfRangeException;
 import output.OutputRecord;
@@ -53,7 +54,6 @@ public class TriangleChallenge {
                 writer.write(record.toString());
                 writer.write("\n");
             }
-
             writer.flush();
             writer.close();
         } catch (IOException e) {
@@ -88,7 +88,7 @@ public class TriangleChallenge {
         try {
             Triangle triangle = triangleJudgeHandler.judgeTriangle(inputLengths[0], inputLengths[1], inputLengths[2]);
             outputList.add(new OutputRecord(inputLine, triangle.getTriangleType().getName(), false));
-        } catch (OutOfRangeException e) {
+        } catch (IllegalConditionException e) {
             outputList.add(new OutputRecord(inputLine, e.getErrorMessage(), true));
         }
     }
